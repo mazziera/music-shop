@@ -5,7 +5,7 @@
     list-style: none;
 }
 
-body{
-    min-height: 100vh;
-    background-color: #EDEDED;
+a{
+    text-decoration: none;
+    color: #FFFF;
 }

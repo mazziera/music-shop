@@ -1,7 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap");
+
 body {
   min-height: 100vh;
   background: radial-gradient(#da1c3e, #600a0b, #000000);
-  font-family: Arial, sans-serif;
+  font-family: "Gothic A1", sans-serif;
+  font-weight: 400;
+  font-style: normal;
   overflow: hidden;
 }
 
@@ -17,6 +21,11 @@ header {
   font-weight: bold;
   text-decoration: none;
   color: #ffff;
+  transition: 0.5s ease-out;
+}
+
+.logo:hover{
+    transform: scale(1.1);
 }
 
 .menu ul {
@@ -26,12 +35,18 @@ header {
 
 .menu a {
   text-decoration: none;
+  font-weight: bold;
   color: #ffff;
+  transition: 0.5s ease-in-out;
 }
 
-section{
-    height: 100vh;
-    position: relative;
+.menu a:hover{
+    color: #FFE600;
+}
+
+section {
+  height: 100vh;
+  position: relative;
 }
 
 .itens-container {
@@ -41,199 +56,188 @@ section{
   position: relative;
 }
 
-.itens-container .item{
-    position: absolute;
-    inset: 0; /* shorthand de top, right, bottom, left */
+.itens-container .item {
+  position: absolute;
+  inset: 0; /* shorthand de top, right, bottom, left */
 }
 
-.item .guitarra-img{
-    width: 60%;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+.item .guitarra-img {
+  max-width: 60%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .item img {
   max-width: 90%;
 }
 
-.conteudo-container{
-    width: 60%;
-    height: 100%;
-    margin-left: 45px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-10%);
-    right: 0;
-    display: flex;
-    flex-direction: column;
+.conteudo-container {
+  width: 60%;
+  height: 100%;
+  margin-left: 45px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-10%);
+  right: 0;
+  display: flex;
+  flex-direction: column;
 
-    & h2{
-        width: 100%;
-        margin-bottom: 10px;
-        text-align: justify;
-        font-size: 3em;
-        color: #ffff;
-    }
-
-}
-
-.conteudo-container .descricao{
+  & h2 {
     max-width: 400px;
-    display: flex;
-    flex-direction: column;
+    margin-bottom: 10px;
+    font-size: 2.6em;
+    text-transform: uppercase;
     text-align: right;
     color: #ffff;
+  }
 }
 
-.descricao .botao-saiba-mais{
-    max-width: 100px;
-    padding: 0 5px;
-    margin-top: 10px;
-    display: flex;
-    align-self: end;
-    
+.conteudo-container .descricao {
+  max-width: 400px;
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  color: #ffff;
 }
 
-.botao-saiba-mais:hover{
-    cursor: pointer;
+.botao-saiba-mais {
+  max-width: 100px;
+  width: 100%;
+  padding: 8px 10px;
+  margin-top: 10px;
+  outline: none;
+  border: none;
+  background-color: #231F20;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  left: 100px;
+  transition: 0.5s ease-in-out;
 }
 
-.indicadores{
-    width: 90vw;
-    height: 200px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    
-    gap: 15px;
-
-    & .numeros{
-        font-size: 2em;
-        color: #ffff;
-    }
+.botao-saiba-mais:hover {
+  cursor: pointer;
+  background-color: #000000;
 }
 
-.indicadores ul {
-    display: flex;
-    gap: 10px;
+.botao-saiba-mais > a{
+    font-weight: bold;
+    text-transform: capitalize;
 }
 
-.indicadores ul > li{
-    width: 50px;
-    height: 5px;
-    background-color: aqua;
-    transition: 0.5s;
+.active {
+  background-color: #ffff;
 }
 
-.active{
-    background-color: #ffff;
+.setas-container {
+  width: 100vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -25px);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.setas-container{
-    width: 100vw;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -25px);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+.setas-container::before {
+  width: 46.5%;
+  content: "";
+  border-top: 1px solid #fff;
+  position: absolute;
+  top: 50%;
 }
 
-.setas-container::before{
-    width: 50%;
-    content: '';
-    border-top: 1px solid #FFF;
-    position: absolute;
-    top: 50%;
+.setas-container button {
+  width: 50px;
+  height: 50px;
+  padding: 5px;
+  background-color: #ffff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
 }
 
-.setas-container button{
-    width: 50px;
-    height: 50px;
-    padding: 5px;
-    background-color: #ffff;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
+.setas-container button:hover{
+    background-color: #FFE600;
 }
 
-.setas-container button img{
-    max-width: 30px;
-    margin-top: 4px;
+.setas-container button img {
+  max-width: 30px;
+  margin-top: 4px;
 }
 
-
-.setas-container #seta-esquerda{
-    transform: scale(-1); /* invertendo de lado a seta */
+/* invertendo de lado a seta */
+.setas-container #seta-voltar {
+  transform: scale(-1);
 }
 
 /* Efeitos de transição */
-section{
-    & .itens-container{
-        & .item{
-            transform: translateX(100vw);
-            transition: 1s;
-            opacity: 0;
+section {
+  & .itens-container {
+    & .item {
+      transform: translateX(100vw);
+      transition: 0.5s;
+
+      & .guitarra-img {
+        & img {
+          transition-delay: 0.3s;
         }
-    
-        & .guitarra-img{
-            & img{
-    
-            }
+      }
+
+      & .conteudo-container {
+        & h2,
+        .descricao,
+        .botao-saiba-mais {
+          transform: translateX(200px);
+          transition: 0.7s;
+          transition-delay: 0.3s;
         }
-    
-        & .conteudo-container{
-            & h2, .descricao, .botao-saiba-mais{
-                transform: translateX(200px);
-                transition: 0.7s;
-                transition-delay: 0.3s;
-            }
-    
-            & h2{
-                transition-delay: 0.5s;
-            }
-    
-            &.descricao{
-                transition-delay: 0.7s;
-            }
-    
-            & .botao-saiba-mais{
-                transition: 0.9s;
-            }
+
+        & h2 {
+          transition-delay: 0.5s;
+        }
+
+        & .descricao {
+          transition-delay: 0.7s;
+        }
+
+        & .botao-saiba-mais {
+          transition-delay: 0.9s;
+        }
+      }
     }
 
-    
+    & .active-item {
+      transform: translateX(0);
+      transition: 1s;
+      opacity: 1;
 
-    }
-
-    & .active-item{
-        transform: translateX(0);
-        transition: 0.5s;
-        opacity: 1;
-
+      & .conteudo-container {
+        & h2,
+        .descricao {
+          transform: translateX(0);
+          transition-delay: 0.5s;
         }
 
-        & .guitarra-img{
-
+        & h2 {
+          transition-delay: 0.5s;
         }
+
+        & .descricao {
+          transition-delay: 0.7s;
+        }
+
+        & .botao-saiba-mais {
+          transform: translateX(200px);
+          transition: 0.5s;
+          transition-delay: 0.2s;
+        }
+      }
     }
+  }
 }
-
-/*
-footer{
-    max-width: 100%;
-    padding: 20px;
-    background-color: black;
-    color: #FFFFFF;
-
-}
-
-.rodape-container{
-    display: flex;
-    justify-content: space-between;
-} */
